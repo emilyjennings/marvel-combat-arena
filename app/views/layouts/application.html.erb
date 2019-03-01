@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MarvelCombatArena</title>
+    <title>TextMarvelCombatArena</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
   </head>
 
   <body>
     <%= yield %>
   </body>
+  <footer><a href="http://marvel.com">Data provided by Marvel. © 2019 MARVEL</a></footer>
 </html>
