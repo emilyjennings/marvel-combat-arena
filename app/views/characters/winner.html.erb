@@ -1,0 +1,9 @@
+<h1>And the winner is:</h1>
+I want to use this view later to have the user redirected when the results are shown. I may need sessions to do this.
+
+<div id="win">Who will win?</div>
+<%= form_tag '/winner' do %>
+  <%= label_tag 'Enter a number 1-9'%>
+  <%= text_field_tag :num %>
+  <%= submit_tag "Click here to see the winner!" %>
+<% end %>

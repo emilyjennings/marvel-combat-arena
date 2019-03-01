@@ -1,0 +1,24 @@
+<h1>Search All Characters</h1>
+
+<h2>Enter a few characters to see characters beginning with those letter(s) or number(s):</h2>
+<%= form_tag '/searchByLetter' do %>
+  <%= label_tag :letter %>
+  <%= text_field_tag :letter %>
+  <%= submit_tag "Search Characters by Letter(s)" %>
+<% end %>
+
+<%if @characters%>
+  <div class="clearfix">
+    <% @characters.each do |c| %>
+      <div class="character">
+        <div class="name"><%=link_to c['name'], c['urls'][0]['url']%></div>
+        <div class="thumbnail"><%= image_tag c['thumbnail']['path'] + '.jpg' %></div>
+      </div>
+    <%end%>
+  </div>
+<%else%>
+  <%=@error%>
+<%end%>
+<br>
+
+<div class="goback"><%=link_to 'Go back to play', play_path%></div>

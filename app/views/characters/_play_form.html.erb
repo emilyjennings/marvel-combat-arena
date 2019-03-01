@@ -1,0 +1,15 @@
+<h2>Who will battle today?</h2>
+
+<h3>Enter the characters:</h3>
+<%= form_tag '/play' do %>
+  <%= label_tag :character_one %>
+  <%= text_field_tag :character_one %>
+  <br>
+  <%= label_tag :character_two %>
+  <%= text_field_tag :character_two %>
+  <br>
+  <%= label_tag 'Pick a number' %>
+  <%= number_field_tag :num, nil, min: "1", max: "9" %>
+  <br>
+  <%= submit_tag "Submit" %>
+<% end %>

@@ -1,0 +1,62 @@
+<h1>Marvel Character Combat Arena</h1>
+
+<div id="play"><h2>Ready to Play? Click here!</h2></div>
+<div id="start"></div>
+
+</div>
+
+<script>
+  $('#play').click(function(){
+    if ($('#start').val() == "") {
+      $('#start').html("<%= escape_javascript(render "play_form")%>")
+    }
+  });
+</script>
+
+
+<p>Don't know which character you want? <%=link_to "Search Characters", characters_path%></p>
+
+
+<%if @word_one && @word_two %>
+  <div class="player">
+    <div class="clearfix">
+      <div class="character_play">
+        <div class="player_name"><%= link_to name(@character_one), url(@character_one)%></div>
+        <div class="player_thumbnail"><%= image_tag img(@character_one)%></div>
+      </div>
+      <div class="text"><h1> VS </h1></div>
+
+      <div class="character_play">
+        <div class="player_name"><%= link_to name(@character_two), url(@character_two)%></div>
+        <div class="player_thumbnail"><%=image_tag img(@character_two)%></div>
+      </div>
+    </div>
+  </div>
+  <div class="clearfix">
+    <div class="winner">
+      <%if (@one_magic && @two_magic) || (@character_one == @character_two)%>
+        <h1>It's a draw!</h1>
+      <%elsif @one_magic%>
+        <h1>The winner is: <%=name(@character_one)%></h1>
+        <p><%=description(@character_one)%></p>
+      <%elsif @two_magic%>
+        <h1>The winner is: <%=name(@character_two)%></h1>
+        <p><%=description(@character_two)%></p>
+      <%elsif @word_one.length == @word_two.length%>
+        <h1>It's a draw!</h1>
+      <%elsif @word_one.length > @word_two.length%>
+        <h1>The winner is: <%=name(@character_one)%></h1>
+        <p><%=description(@character_one)%></p>
+      <%else @word_one.length < @word_two.length%>
+        <h1>The winner is: <%=name(@character_two)%></h1>
+        <p><%=description(@character_two)%></p>
+      <%end%>
+    </div>
+  </div>
+  <br></br>
+
+<%elsif @error%>
+
+  <h2><%=@error%></h2>
+
+<%end%>
