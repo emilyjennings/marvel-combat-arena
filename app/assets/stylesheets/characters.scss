@@ -17,9 +17,9 @@ body {
 }
 
 .clearfix {
-    display: inline-block;
-    margin: 0 auto;
-    width: 100%;
+  display: inline-block;
+  margin-top: 20px;
+
 }
 
 .thumbnail img {
@@ -92,4 +92,38 @@ a:hover {
   padding: 10px;
   top: 0;
   right: 0;
+}
+
+@media all and (max-width: 450px) {
+
+  h1 {
+    font-size: 25px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  .goback {
+    font-size: 12px;
+    width: 40px;
+    margin: 5px;
+  }
+
+  .text {
+    display: block;
+    margin-top: 20px;
+  }
+
+  .text::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  footer {
+    font-size: 12px;
+  }
+
+
 }
