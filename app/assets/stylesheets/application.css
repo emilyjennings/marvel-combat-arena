@@ -57,10 +57,10 @@
  .character {
    border: 3px solid #87eda7;
    display: inline-block;
-   float: left;
    width: 200px;
    height: 200px;
    text-align: center;
+   float: left;
  }
 
  .character_play {
@@ -113,6 +113,23 @@
    padding: 10px;
    background: #42356b;
  }
+
+ h1 {
+   font-weight: bold;
+ }
+
+ .results {
+   display: block;
+   width: 80%;
+   margin: 0 auto;
+  }
+
+#play {
+  border: 3px solid #87eda7;
+  border-radius: 10px;
+  width: 210px;
+  margin: auto;
+}
 
 @media all and (max-width: 500px) {
 

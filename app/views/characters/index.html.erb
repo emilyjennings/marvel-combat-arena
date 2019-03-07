@@ -9,12 +9,14 @@
 
 <%if @characters%>
   <div class="clearfix">
-    <% @characters.each do |c| %>
-      <div class="character">
-        <div class="name"><%=link_to c['name'], c['urls'][0]['url']%></div>
-        <div class="thumbnail"><%= image_tag c['thumbnail']['path'] + '.jpg' %></div>
-      </div>
-    <%end%>
+    <div class="results">
+      <% @characters.each do |c| %>
+        <div class="character">
+          <div class="name"><%=link_to c['name'], c['urls'][0]['url']%></div>
+          <div class="thumbnail"><%= image_tag c['thumbnail']['path'] + '.jpg' %></div>
+        </div>
+      <%end%>
+    </div>
   </div>
 <%else%>
   <%=@error%>
