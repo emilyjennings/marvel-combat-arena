@@ -8,6 +8,11 @@ Rails.application.routes.draw do
   post '/winner', to: 'characters#winner'
   #The player will get redirected to a new page to see the winner - so I added that view to the pages in the resource below
   get '/searchByLetter', to: 'characters#index'
+  get   '/signup', to: 'users#new'
+  get   '/login',   to: 'sessions#new'
+  post   '/login',   to: 'sessions#create'
+  delete '/logout',  to: 'sessions#destroy'
+
 
   resources :characters, only: [:index, :winner]
 end
