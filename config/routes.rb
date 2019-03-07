@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :points
   get '/play', to: 'characters#play'
   post '/play', to: 'characters#character_play'
   post '/searchByLetter', to: 'characters#searchByLetter'
