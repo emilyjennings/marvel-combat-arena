@@ -1,0 +1,19 @@
+<% if flash[:notice] %>
+  <h2><div class="notice"><%= flash[:notice] %></div></h2>
+<% end %>
+
+<h1>Sign Up To Play</h1>
+
+<%= form_for(@users) do |f| %>
+  <%= f.label :username %>
+  <%= f.text_field :username%>
+  <br>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+  <br>
+
+
+  <%=f.submit 'Submit' %>
+<%end%>
+
+<p>Not a new user? <%= link_to "Log in!", login_path %></p>

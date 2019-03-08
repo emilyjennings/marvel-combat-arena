@@ -1,0 +1,17 @@
+<h1>Log In!</h1>
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+
+<%= form_for(:session, url: login_path) do |f|%>
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+  <br>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+  <br>
+  <%=f.submit 'Submit'%>
+  <%end%>
+<br>
+
+<p>Not a new user? <%= link_to "Sign up now!", signup_path %></p>
