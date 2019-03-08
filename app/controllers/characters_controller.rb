@@ -1,6 +1,3 @@
-require 'pry'
-#Used pry in my API calls (and many other places). In the beginning I was having trouble with the MDN digest for the hash parameter. Figured out by using pry that the call wasn't going through
-
 class CharactersController < ApplicationController
   def play
     #shows the player a form to enter character names and a seed number
@@ -103,6 +100,29 @@ class CharactersController < ApplicationController
       end
 
     end
+  end
+
+  def one_player_mode_play
+    @computer_choice = ["iron man", "hulk", "wasp"]
+    @user = current_user
+    # public_key = ENV['marvel_public_key']
+    # private_key = ENV['marvel_private_key']
+    # timestamp = DateTime.now.to_s
+    # hash = Digest::MD5.hexdigest( "#{timestamp}#{private_key}#{public_key}" )
+    #
+    # begin
+    # @resp_one = Faraday.get 'http://gateway.marvel.com/v1/public/characters' do |req|
+    #   req.params['ts'] = timestamp
+    #   req.params['apikey'] = public_key
+    #   req.params['hash'] = hash
+    #   req.params['name'] =  @computer_choice.sample
+    # end
+    #
+    # character_one = JSON.parse(@resp_one.body)
+  end
+
+  def one_player_mode
+
   end
 
   def index
